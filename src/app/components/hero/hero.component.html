@@ -1,27 +1,72 @@
-<section class="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-white py-20 dark:bg-slate-950">
-  <!-- Dynamic Network/Canvas Background -->
-  <app-network-background />
+<section id="inicio" class="relative flex min-h-screen max-h-screen items-center justify-center overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-slate-50/30 dark:bg-tanteo-dark/30">
+    <app-network-background />
+  </div>
 
-  <!-- Dynamic Map Background Overlay -->
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <!-- Tagline badge -->
+      <div class="mb-8 flex justify-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/80">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-tanteo-orange"></span>
+          <span class="text-sm font-medium text-slate-600 dark:text-slate-400">
+            Experiencia y precisión
+          </span>
+        </div>
+      </div>
 
-  <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <h1 class="text-5xl font-extrabold tracking-tight text-tanteo-dark sm:text-6xl lg:text-7xl">
-        Decisiones estratégicas <span class="text-tanteo-orange italic">respaldadas por datos</span>
+      <!-- Headline -->
+      <h1 class="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+        Decisiones estratégicas respaldadas por 
+        <span class="text-tanteo-orange">datos</span>
       </h1>
-      
-      <p class="mt-6 text-xl font-medium text-slate-600 sm:text-2xl">
-        Experiencia y precisión en cada paso de tu transformación digital.
+
+      <!-- Sub-headline -->
+      <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-600 dark:text-slate-400">
+        En Tanteo transformamos información en conocimiento accionable. 
+        Nuestro equipo de expertos brinda soluciones de análisis de datos, 
+        encuestas y consultoría para impulsar el éxito de su organización.
       </p>
 
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a routerLink="/contacto" class="rounded-full bg-tanteo-orange px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-orange-600">
-          Iniciar consulta
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a 
+          routerLink="/contacto" 
+          class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tanteo-orange px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-orange-600 sm:w-auto"
+        >
+          Solicitar consulta
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
         </a>
-        <a routerLink="/experiencia" class="rounded-full border-2 border-slate-700 bg-transparent px-8 py-4 text-lg font-bold text-slate-700 transition-all hover:bg-slate-700 hover:text-white">
-          Nuestra experiencia
+        <a 
+          routerLink="/experiencia" 
+          class="inline-flex w-full items-center justify-center rounded-lg border border-slate-300 bg-white/50 px-6 py-3.5 text-sm font-bold text-slate-700 backdrop-blur-sm transition-all hover:bg-slate-100 dark:border-white/10 dark:text-white dark:hover:bg-white/5 sm:w-auto"
+        >
+          Conocer más
         </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="mt-16 flex flex-col items-center justify-center gap-6 text-sm text-slate-500 sm:flex-row sm:gap-12 dark:text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-tanteo-orange"></span>
+          <span>Análisis de datos</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-tanteo-orange"></span>
+          <span>Encuestas</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-tanteo-orange"></span>
+          <span>Consultoría</span>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Decorative gradient -->
+  <div class="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent dark:from-slate-950"></div>
 </section>

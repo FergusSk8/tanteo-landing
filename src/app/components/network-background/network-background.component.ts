@@ -86,7 +86,7 @@ export class NetworkBackgroundComponent implements AfterViewInit, OnDestroy {
       // Draw point
       this.ctx!.beginPath();
       this.ctx!.arc(point.x, point.y, 2, 0, Math.PI * 2);
-      this.ctx!.fillStyle = "rgba(100, 116, 139, 0.3)";
+      this.ctx!.fillStyle = "rgba(249, 115, 22, 0.6)";
       this.ctx!.fill();
     });
 
