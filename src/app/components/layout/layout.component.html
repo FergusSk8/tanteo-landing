@@ -12,6 +12,7 @@
     <nav class="hidden md:flex md:gap-x-4 me-4">
       <a
         routerLink="/"
+        fragment="inicio"
         routerLinkActive="text-tanteo-orange"
         [routerLinkActiveOptions]="{ exact: true }"
         class="text-sm font-semibold leading-6 text-white transition-colors hover:text-tanteo-orange"
@@ -19,14 +20,16 @@
         Inicio
       </a>
       <a
-        routerLink="/experiencia"
+        routerLink="/"
+        fragment="experiencia"
         routerLinkActive="text-tanteo-orange"
         class="text-sm font-semibold leading-6 text-white transition-colors hover:text-tanteo-orange"
       >
         Experiencia
       </a>
       <a
-        routerLink="/contacto"
+        routerLink="/"
+        fragment="contacto"
         routerLinkActive="text-tanteo-orange"
         class="text-sm font-semibold leading-6 text-white transition-colors hover:text-tanteo-orange"
       >
@@ -34,7 +37,8 @@
       </a>
     </nav>
       <a
-        routerLink="/contacto"
+        routerLink="/"
+        fragment="contacto"
         class="rounded-full bg-tanteo-orange px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105"
       >
         Empezar ahora
@@ -68,27 +72,31 @@
       <div class="space-y-4">
         <a
           routerLink="/"
+          fragment="inicio"
           (click)="closeMenu()"
           class="block text-base font-semibold text-white hover:text-tanteo-orange"
         >
           Inicio
         </a>
         <a
-          routerLink="/experiencia"
+          routerLink="/"
+          fragment="experiencia"
           (click)="closeMenu()"
           class="block text-base font-semibold text-white hover:text-tanteo-orange"
         >
           Experiencia
         </a>
         <a
-          routerLink="/contacto"
+          routerLink="/"
+          fragment="contacto"
           (click)="closeMenu()"
           class="block text-base font-semibold text-white hover:text-tanteo-orange"
         >
           Contacto
         </a>
         <a
-          routerLink="/contacto"
+          routerLink="/"
+          fragment="contacto"
           (click)="closeMenu()"
           class="block w-full rounded-full bg-tanteo-orange px-6 py-3 text-center text-base font-bold text-white"
         >
