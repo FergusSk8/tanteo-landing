@@ -12,7 +12,10 @@
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "vitest",
-    "preview": "node dist/analog/server/index.mjs"
+    "lint": "eslint src",
+    "format": "prettier --write src",
+    "preview": "node dist/analog/server/index.mjs",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -45,8 +48,19 @@
     "@angular/build": "^21.0.0",
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@eslint/js": "^10.0.1",
+    "angular-eslint": "^21.3.1",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
     "jsdom": "^22.0.0",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
     "typescript": "~5.9.0",
+    "typescript-eslint": "^8.59.2",
     "vite": "^8.0.0",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^4.1.0"
