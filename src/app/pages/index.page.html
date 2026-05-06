@@ -1,4 +1,45 @@
 <app-hero />
-<app-experience-section />
-<app-contact-form />
+
+@defer (on viewport) {
+  <app-experience-section />
+} @placeholder {
+  <!-- Experience Skeleton -->
+  <div class="bg-secondary/5 py-24 animate-pulse">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center mb-16">
+        <div class="h-10 bg-slate-200 rounded-lg w-3/4 mx-auto mb-4"></div>
+        <div class="h-6 bg-slate-100 rounded-lg w-full mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        @for (i of [1,2,3,4]; track i) {
+          <div class="h-48 bg-slate-100/50 rounded-2xl border border-slate-100"></div>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@defer (on viewport) {
+  <app-contact-form />
+} @placeholder {
+  <!-- Contact Skeleton -->
+  <div class="bg-gray-200/30 p-8 pt-16 animate-pulse">
+    <div class="max-w-xl mx-auto">
+      <div class="h-10 bg-slate-200 rounded-lg w-2/3 mb-6"></div>
+      <div class="h-6 bg-slate-100 rounded-lg w-full mb-12"></div>
+      <div class="space-y-6 p-8 bg-white rounded-2xl border border-slate-100">
+        @for (j of [1,2,3,4]; track j) {
+          <div class="space-y-2">
+            <div class="h-4 bg-slate-100 rounded w-20"></div>
+            <div class="h-12 bg-slate-50 rounded-xl border border-slate-100"></div>
+          </div>
+        }
+        <div class="h-14 bg-slate-200 rounded-xl w-full"></div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Structured Data -->
+<div [innerHTML]="jsonLd"></div>
 

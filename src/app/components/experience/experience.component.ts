@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { EXPERIENCE_STATS, EXPERIENCE_FEATURES } from '../../fixtures/experience.fixture';
 
 @Component({
   selector: 'app-experience-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
