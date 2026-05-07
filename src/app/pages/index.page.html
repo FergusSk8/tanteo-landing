@@ -1,6 +1,6 @@
 <app-hero />
 
-@defer (on viewport) {
+@defer (on idle) {
   <app-experience-section />
 } @placeholder {
   <!-- Experience Skeleton -->
@@ -19,7 +19,7 @@
   </div>
 }
 
-@defer (on viewport) {
+@defer (on idle) {
   <app-contact-form />
 } @placeholder {
   <!-- Contact Skeleton -->

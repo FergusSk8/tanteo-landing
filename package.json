@@ -9,7 +9,7 @@
     "ng": "ng",
     "dev": "vite",
     "start": "npm run dev",
-    "build": "vite build && mv dist/analog/public/_worker.js/index.mjs dist/analog/public/_worker.js/index.js",
+    "build": "vite build && node rename-worker.js",
     "watch": "vite build --watch",
     "test": "vitest",
     "lint": "eslint src",
