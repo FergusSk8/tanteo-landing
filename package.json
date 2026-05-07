@@ -9,7 +9,7 @@
     "ng": "ng",
     "dev": "vite",
     "start": "npm run dev",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs = require('fs'); fs.rmSync('dist/analog/public/_worker.js', { recursive: true, force: true })\"",
     "watch": "vite build --watch",
     "test": "vitest",
     "lint": "eslint src",
