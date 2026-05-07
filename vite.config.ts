@@ -15,14 +15,9 @@ export default defineConfig(() => ({
   },
   plugins: [
     analog({
-      ssr: true,
       static: true,
       prerender: {
         routes: ['/'],
-      },
-      nitro: {
-        preset: 'cloudflare-pages',
-        inlineDynamicImports: true
       },
     }),
     tailwindcss(),
