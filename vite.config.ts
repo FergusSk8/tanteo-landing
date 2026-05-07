@@ -19,6 +19,9 @@ export default defineConfig(() => ({
       prerender: {
         routes: ['/'],
       },
+      nitro: {
+        preset: 'cloudflare-pages',
+      },
     }),
     tailwindcss(),
   ],
