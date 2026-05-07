@@ -22,13 +22,6 @@ export default defineConfig(() => ({
       },
       nitro: {
         preset: 'cloudflare-pages',
-        minify: true,
-        node: true,
-        inlineDynamicImports: true,
-        cloudflare: {
-          nodeCompat: true,
-        },
-        sourceMap: false,
       },
     }),
     tailwindcss(),
