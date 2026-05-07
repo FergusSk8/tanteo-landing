@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, inject, PLATFORM_ID, ChangeDetectionStrategy, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 interface Point {
@@ -14,6 +14,7 @@ interface Point {
   template: `
     <canvas #canvasRef class="absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [`
     :host {
       display: block;
@@ -30,10 +31,14 @@ export class NetworkBackgroundComponent implements AfterViewInit, OnDestroy {
   private animationFrameId?: number;
   private points: Point[] = [];
   private ctx?: CanvasRenderingContext2D | null;
+  private ngZone = inject(NgZone);
+  private resizeListener?: () => void;
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.initCanvas();
+      this.ngZone.runOutsideAngular(() => {
+        this.initCanvas();
+      });
     }
   }
 
@@ -43,12 +48,14 @@ export class NetworkBackgroundComponent implements AfterViewInit, OnDestroy {
     if (!this.ctx) return;
 
     this.resize();
-    window.addEventListener('resize', () => this.resize());
+    this.resizeListener = () => this.resize();
+    window.addEventListener('resize', this.resizeListener);
     this.draw();
   }
 
   private resize() {
     const canvas = this.canvasRef.nativeElement;
+    if (!canvas) return;
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     this.initPoints();
@@ -115,7 +122,9 @@ export class NetworkBackgroundComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
-      window.removeEventListener('resize', () => this.resize());
+      if (this.resizeListener) {
+        window.removeEventListener('resize', this.resizeListener);
+      }
       if (this.animationFrameId) {
         cancelAnimationFrame(this.animationFrameId);
       }

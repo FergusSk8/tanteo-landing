@@ -14,10 +14,10 @@ export default defineConfig(() => ({
   },
   plugins: [
     analog({
-      ssr: false,
+      ssr: true,
       static: true,
       prerender: {
-        routes: [],
+        routes: ['/'],
       },
     }),
     tailwindcss(),

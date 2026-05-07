@@ -59,7 +59,7 @@
             <div
               class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-tanteo-orange/10 text-tanteo-orange group-hover:bg-tanteo-orange transition-colors duration-300"
             >
-              <img [ngSrc]="feature.icon" [alt]="feature.title" width="24" height="24" class="brightness-0 saturate-100 invert-50 sepia-100 saturate-5000 hue-rotate-10 group-hover:invert-100 group-hover:brightness-200" style="filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(1915%) hue-rotate(345deg) brightness(101%) contrast(95%);" />
+              <img [ngSrc]="feature.icon" fetchpriority="high" [alt]="feature.title" width="24" height="24" class="brightness-0 saturate-100 invert-50 sepia-100 saturate-5000 hue-rotate-10 group-hover:invert-100 group-hover:brightness-200" style="filter: brightness(0) saturate(100%) invert(58%) sepia(85%) saturate(1915%) hue-rotate(345deg) brightness(101%) contrast(95%);" />
             </div>
             <h3 class="text-lg font-semibold text-slate-900">
               {{ feature.title }}

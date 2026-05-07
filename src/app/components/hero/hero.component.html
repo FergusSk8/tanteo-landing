@@ -1,7 +1,9 @@
 <section id="inicio" class="relative flex min-h-screen max-h-screen items-center justify-center overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 bg-slate-50/30 dark:bg-tanteo-dark/30">
-    <app-network-background />
+    @defer (on idle) {
+      <app-network-background />
+    }
   </div>
 
   <!-- Content -->
