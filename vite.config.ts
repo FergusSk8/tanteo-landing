@@ -22,8 +22,12 @@ export default defineConfig(() => ({
       },
       nitro: {
         preset: 'cloudflare-pages',
+        inlineDynamicImports: true
       },
     }),
     tailwindcss(),
   ],
+  ssr: {
+    noExternal: /.*/,
+  }
 }));
